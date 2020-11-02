@@ -5,7 +5,7 @@ public class StringUtilities {
      * @return `input`
      */
     public String returnInput(String input) {
-        return null;
+        return input;
     }
 
     /**
@@ -14,7 +14,8 @@ public class StringUtilities {
      * @return the concatenation of `baseValue` and `valueToBeAdded`
      */
     public String concatenate(String baseValue, String valueToBeAdded) {
-        return null;
+        String answer = baseValue + valueToBeAdded;
+        return answer;
     }
 
     /**
@@ -22,7 +23,9 @@ public class StringUtilities {
      * @return identical string with characters in opposite order
      */
     public String reverse(String valueToBeReversed) {
-        return null;
+        String string = valueToBeReversed;
+        String reverse = new StringBuffer(string).reverse().toString();
+        return reverse;
     }
 
     /**
@@ -30,7 +33,10 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+
+        int middleIndex = word.length() / 2;
+        char middleLetter = word.charAt(middleIndex);
+        return middleLetter;
     }
 
     /**
@@ -39,14 +45,29 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+
+        StringBuilder answer = new StringBuilder(value);
+
+        while(answer.toString().indexOf(charToRemove) != -1) {
+            answer = answer.deleteCharAt(answer.toString().indexOf(charToRemove));
+        }
+         return answer.toString();
+
+//       String answer = "";
+//       for(int i = 0; i < value.length(); i++){
+//           if( != charToRemove)
+//           if(Character.isWhitespace(phrase.charAt(c)))
+//       }
+
     }
 
     /**
      * @param sentence String delimited by spaces representative of a sentence
      * @return last `word` in sentence
      */
-    public String getLastWord(String sentence) {
-        return null;
+    public String getLastWord(String sentence){
+        String answer = sentence;
+        String lastWord = answer.substring(answer.lastIndexOf(" ")+1);
+        return lastWord;
     }
 }
